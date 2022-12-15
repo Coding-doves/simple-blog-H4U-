@@ -1,0 +1,346 @@
+
+/* ------ this style sheet is for both case study and research papers ---------------- */
+
+body{
+    margin: 0;
+}
+
+/* ------ navigation ---------------- */
+
+nav{
+    padding: 20px;
+	font-weight: 700;
+    box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* ------ nav logo ---------------- */
+ .nav_logo {
+    z-index: 101;
+    margin: 0;
+    position: relative;
+}
+
+.nav_logo a {
+    display: block;
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    border: none;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+}
+
+.nav_logo img {
+    width: 5.8rem;
+    height: 5.8rem;
+    margin: 0;
+    vertical-align: bottom;
+}
+
+.navbar-nav .nav-item{
+    padding-left: 2rem;
+}
+/*Apply styles after nav scroll*/
+.scrolling-active{
+    background-color:rgba(10, 10, 10, 0.9);
+    box-shadow: 0 3px 1rem rgba(0,0,0,.1);
+}
+.scrolling-active a.nav-link, .butt{
+    color: #F6F6F6 !important;
+}
+.scroll-active a{
+	color: #1F1F1F !important;
+}
+/*back to top scroll effect*/
+
+html{
+    scroll-behavior: smooth;
+}
+/*Apply styles main content scroll*/
+
+.container{
+	position: relative;
+    margin-bottom: 8rem;
+}
+.title{
+    margin-bottom: 4rem;
+    text-align: center;
+    justify-content: center;
+}
+.title h1{
+	font-size:36px;
+	margin-top:30px;
+}
+.title span{
+    font-size: 1rem;
+    padding: 2.5rem;
+}
+
+.tag{
+    position: absolute;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: #40F226;
+    top: 0;
+    right: 0;
+    font-size: 10px;
+    color: #fff;
+}
+.img {
+    margin: 5px;
+    margin-top: 0.5rem;
+    border: 1px solid lightgray;
+    float: left;
+    width: 350px;
+    position: relative;
+}
+.img img {
+    width: 100%;
+    height: 250px;
+    display: block;
+}    
+.desc {
+        padding: 15px;
+        text-align: center;
+        font-size: small;
+}
+.desc a{
+        color:gray;
+        text-decoration: none;
+        cursor: pointer;
+}
+.desc a span{
+        color: green;
+        font-size: 12px;
+}
+.clearfix:after {
+	height: 100px;
+    content: "";
+    display: table;
+    clear: both;
+}
+  
+  /* Popover styling */
+  
+  .popover__title {
+    font-size: 24px;
+    line-height: 36px;
+    text-decoration: none;
+    color: rgb(228, 68, 68);
+    text-align: center;
+    padding: 15px 0;
+  }
+  
+  .popover__wrapper {
+    position: relative;
+    margin-top: 1.5rem;
+    display: inline-block;
+  }
+  .popover__content {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    left: -150px;
+    transform: translate(0, 10px);
+    background-color: #bfbfbf;
+    padding: 1.5rem;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+    width: auto;
+  }
+  .popover__content:before {
+    position: absolute;
+    z-index: -1;
+    content: "";
+    right: calc(50% - 10px);
+    top: -8px;
+    border-style: solid;
+    border-width: 0 10px 10px 10px;
+    border-color: transparent transparent #bfbfbf transparent;
+    transition-duration: 0.3s;
+    transition-property: transform;
+  }
+  .popover__wrapper:hover .popover__content {
+    z-index: 10;
+    opacity: 1;
+    visibility: visible;
+    transform: translate(0, -20px);
+    transition: all 0.5s cubic-bezier(0.75, -0.02, 0.2, 0.97);
+  }
+  .popover__message {
+    text-align: center;
+  }
+
+/* footer subscribe -------------------------------------- */
+.row{
+    color: #82898E;
+}
+
+.row h5{
+    color: #1F1F1F;
+    border-bottom: 2px solid #82898E;
+    padding-bottom: 1.5rem;
+    margin-bottom: 1.7rem;
+}
+
+.row a{
+    color: #82898E;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.row a:hover{
+    color: #1F1F1F;
+}
+
+.row ul li{
+    list-style: none;
+}
+
+.subscribe-form #mc-form {
+    padding: 0;
+}
+    
+.subscribe-form input[type="email"] {
+    padding: .8rem 2rem;
+    border: none;
+    width: 100%;
+    margin-bottom: 2rem;
+    background-color: #40F226;
+    opacity: .6;
+}
+
+.subscribe-form input::placeholder {
+    color: #F6F6F6;
+
+}
+    
+.subscribe-form input[type="submit"] {
+    display: none;
+}
+    
+.subscribe-form .subscribe-message {
+    font-size: 1.2rem;
+    color: black;
+}
+    
+.subscribe-form .subscribe-message i{
+    color: black;
+    margin-right: .4rem;
+}
+.top{
+    background-color: #1F1F1F;
+    position: fixed;
+    bottom: 10px;
+    right: 32px;
+    font-size: 32px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #F6F6F6;
+    opacity: 0;
+    pointer-events: none;
+    transition: all .4s;
+}
+.top:hover{
+    color: #40F226;
+}
+.top.activee{
+    bottom: 32px;
+    pointer-events: auto;
+    opacity: 1;
+}
+
+
+@media (max-width: 1200px) {
+    .container{
+        margin-bottom: 12rem;
+    }
+    .img{
+        width: 300px;
+        min-height: 250px;
+    }
+    .img img{
+        min-width: 250px;
+        min-height: 270px;
+    }
+}    
+
+@media (max-width: 1150px){
+
+.img{
+    
+    margin-bottom: 
+    11em;
+}
+.img img {
+    width: 100%;
+    height: 170px;
+}
+    
+}
+
+@media (max-width: 994px){
+    .navbar-nav{
+        background-color: #1F1F1F;
+    }
+    .navbar-nav .nav-item{
+        margin-left: 2rem;
+    }
+    .navbar-nav .nav-item a{
+       color: #F6F6F6 !important;
+    }
+    .d-flex {
+        background-color: #1F1F1F;
+    }
+    .title h1{
+        font-size:25px;
+    }
+    .img {
+        width: 100%;
+        height: 25em;
+        margin-bottom: 5em;
+        
+    }
+    .img img {
+        width: 100%;
+        height: 20em;
+    }
+    .tag{
+        width: 45%;
+    }
+
+  
+}
+
+@media (max-width: 768px){
+    
+    .img {
+        width: 100%;
+        height: 32em;
+    }
+    .img img {
+        height: 22em;
+    }
+    .tag{
+        width: 25%;
+    }
+}
+
+@media (max-width: 657px){
+    
+    .tag{
+        width: 25%;
+    }
+    .img {
+        width: 100%;
+    }
+    .img img {
+        height: 22em;
+    }
+
+    
+}

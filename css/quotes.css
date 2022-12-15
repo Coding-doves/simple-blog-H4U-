@@ -1,0 +1,134 @@
+body{
+    height: 100%;
+}
+* {
+    box-sizing: border-box;
+  }
+nav{
+    padding: 20px;
+	font-weight: 700;
+    background-color: rgba(31, 31, 31, .6);
+    box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* ------ nav logo ---------------- */
+ .nav_logo {
+    z-index: 101;
+    margin: 0;
+    position: relative;
+}
+
+.nav_logo a {
+    display: block;
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    border: none;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+}
+
+.nav_logo img {
+    width: 5.8rem;
+    height: 5.8rem;
+    margin: 0;
+    vertical-align: bottom;
+}
+
+.navbar-nav .nav-item{
+    padding-left: 2rem;
+}
+.d-flex .butt .bi{
+    color: #F6F6F6;
+}
+    /* Add background image and blur effect */
+.bgimg{
+    height: 100vh;
+    background-image: url("../images/pexels-pixabay-355904.jpg");
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.quote-container .quote{
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+    color: white;
+    font-weight: bold;
+    border: 3px solid #f1f1f1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 60%;
+    min-height: 400px;
+    padding: 20px;
+    margin-top: 30px;
+    text-align: center;
+}
+.quote-container .quote-icon{
+    position: absolute;
+    left: 76px;
+    top: 60px;
+    transform: scale(1.5) rotateZ(5deg);
+    opacity: .1;
+}
+.quote-container .quote-content{
+    font-weight: bold;
+    font-size: 30px;
+    color: #F6F6F6;
+}
+.quote-container .quote-author{
+    font-size: 15px;
+    color: #40F226;
+    border-top: 1px solid #F6F6F6;
+    padding: 16px 32px;
+    margin-top: 20px;
+}
+.quote-container .new-quote-btn{
+    padding: 16px 36px;
+    position: fixed;
+    bottom: 36px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #F6F6F6;
+    color: #1F1F1F;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    transition: all 500ms ease;
+}
+.quote-container .new-quote-btn:hover{
+    background-color: #F6F6F6;
+}
+
+@media (max-width:980px){
+    .navbar-nav{
+        background-color: #1F1F1F;
+    }
+    .navbar-nav .nav-item{
+        margin-left: 2rem;
+    }
+    .quote-container .quote{
+        min-height: 500px;
+    }
+    .quote-container .quote-icon{
+        left: -14px;
+    }
+
+}
+@media (max-width:600px){
+    .quote-container .quote-content{
+        font-size: 24px;
+        line-height: 1.8;
+    }
+    .quote-container .new-quote-btn{
+        text-transform: capitalize;
+        width: 250px;
+    }
+}

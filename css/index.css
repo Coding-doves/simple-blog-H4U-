@@ -1,0 +1,165 @@
+body{
+    margin: 0;
+    background-color: #1F1F1F;
+}
+
+/* ------ navigation ---------------- */
+
+nav{
+    padding: 20px;
+    margin-bottom: 5rem;
+}
+
+/* ------ logo ---------------- */
+ .nav_logo {
+    z-index: 101;
+    margin: 0;
+    position: relative;
+}
+
+.nav_logo a {
+    display: block;
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    border: none;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+}
+
+.nav_logo img {
+    width: 5.8rem;
+    height: 5.8rem;
+    margin: 0;
+    vertical-align: bottom;
+}
+
+.navbar-nav .nav-item{
+    padding-left: 2rem;
+}
+nav .navbar-nav .nav-item a.nav_link{
+    color: #40F226;
+}
+
+.d-flex input{
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: #F6F6F6;
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, .5);
+    padding-left: 60px;
+}
+
+.d-flex input::placeholder{
+    color: #F6F6F6;
+    margin-left: 30px;
+}
+.d-flex .butt{
+    position: absolute;
+    top: 50;
+    transform: translateY(-2%);
+    padding-right: 10px;
+    color: #F6F6F6;
+    border-right: 1px solid #F6F6F6;
+}
+
+.butt{
+    height: 35px;
+}
+
+.banne{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding: 0 100px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.banne .im{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.banne .content{
+    position: relative;
+    z-index: 1;
+    max-width:600px ;
+}
+
+.banne .content h1, p{
+    color: #F6F6F6;
+}
+
+.banne .content h1{
+    font-size: 3.3rem;
+    font-weight: 900;
+}
+
+.banne .content p{
+    line-height: 2rem;
+    font-size: 1.1rem;
+}
+
+.banne .content .buttons{
+    position: relative;
+}
+
+.banne .content .buttons a{
+    position: relative;
+    display: block;
+    padding: 6px 20px;
+    color: #F6F6F6;
+    text-decoration: none;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    max-width: 170px;
+    border: 1px solid #82898E;
+}
+
+.banne .content .buttons a:hover{
+    background-color: #40F226;
+}
+
+
+@media (max-width:985px) {
+    .nav_logo img {
+        width: 4.8rem;
+        height: 4.8rem;
+    }
+    .navbar-nav{
+        background-color: #1F1F1F;
+    }
+    .navbar-nav .nav-item{
+        margin-left: 2rem;
+    }
+    .d-flex input{
+        background-color: #F6F6F6;
+    }
+    .d-flex input::placeholder{
+        color: #1F1F1F;
+    }
+    .d-flex .butt{
+        color: #1F1F1F;
+    }
+    .banne{
+    padding-bottom: 2rem;
+    }
+}
+
+@media (max-width:700px) {
+    .nav_logo img {
+        width: 3.8rem;
+        height: 3.8rem;
+    }
+    .banne .content{
+        margin-top: 6rem;
+    }
+}

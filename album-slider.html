@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Slider</title>
+    <style>
+        .wrap{
+    min-height: 700px;
+    display: grid;
+    place-items: center;
+    font-family: sans-serif;
+    background-color: var(--green);
+    color: var(--black);
+}
+.contain{
+    width: 100%;
+    max-width: 900px;
+}
+section{
+    width: 100%;
+    padding: 1em;
+}
+.card{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: auto;
+    background-color: var(--white);
+    box-shadow: rgba(255, 255, 255, 0.2) 0px 1px 1px 0px inset,
+                rgba(50, 50, 93, .3) 0px 50px 100px -20px,
+                rgba(0, 0, 0, 0.3) 0px 30px 60px -30px inset,;
+}               
+.card-info{
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    padding: 1em 2em;
+}
+.card-info h1{
+    font-family: serif;
+    font-size: 5rem;
+    color: var(--dark-green);
+    align-self: center;
+    clip-path: polygon (0 0, 100% 0, 100% 100%, 0% 100%);
+}
+.card-info p{
+    font-size: 0.8rem;
+    font-weight: bold;
+    align-self: center;
+    clip-path: polygon (0 0, 100% 0, 100% 100%, 0% 100%);
+    line-height: 22px;
+}
+.card-info a{
+    display: grid;
+    grid-template-columns: max-content 20px;
+    align-items: center;
+    column-gap: 7px;
+    color: var(--dark-green);
+    font-size: 0.85rem;
+    font-weight: bold;
+    align-self: center;
+    justify-self: flex-end;
+    transform: translateX(0px);
+    transition: transform 0.3s 0.1s ease-out;
+}
+.card-info a:hover{
+    transform: translateX(5px);
+}
+.card-info a:hover svg{
+    transform: translateX(5px);
+}
+.card-info svg{
+    width: 20px;
+    height: 10px;
+    transform: translateX(0px);
+    transition: transform 0.3s 0.1s ease-out;
+}
+.card-info svg line{
+    stroke: var(--dark-green);
+}
+.card-photo{
+    width: 450px;
+    object-fit: cover;
+    position: relative;
+    overflow: hidden;
+}
+.card-photo img{
+    display: block;
+    max-width: 100%;
+    aspect-ratio: 1/1;
+}
+.card-photo a {
+    display: grid;
+    grid-template-columns: max-content 20px;
+    align-items: center;
+    column-gap: 7px;
+    color: var(--white);
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    align-self: flex-start;
+    transform: translateX(0px);
+    transition: transform 0.3s 0.1s ease-out;
+    position: absolute;
+    z-index: 10;
+    bottom: 5%;
+    right: 8%;
+}
+.card-photo a:hover{
+    transform: translateX(5px);
+}
+.card-photo a:hover svg{
+    transform: translateX(5px);
+}
+.card-photo svg{
+    width: 20px;
+    height: 10px;
+    transform: translateX(0px);
+    transition: transform 0.3s ease-out;
+}
+.card-photo svg line{
+    stroke: var(--white);
+    stroke-width: 2;
+}
+.card-photo .mask{
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    z-index: 5;
+    background-color: var(--white);
+}
+#mask-1{
+    left: 0;
+    transform: translateY(-100%);
+}
+#mask-2{
+    right: 0;
+    transform: translateY(100%);
+}
+
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="contain" id="app">
+          <section>
+            <div class="card">
+              <div class="card-info">
+                <h1 id="card-info-title"> currentCard.title</h1>
+                 <p id="card-info-desc">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam, praesentium maxime atque animi vel quidem, facilis sint aliquid perspiciatis ea recusandae iusto placeat, eos nihil eum in cum amet? Sunt.
+                 </p>
+                <a href="case-study.html">
+                  <p>More details</p>
+                  <svg viewBox="0 0 20 10">
+                    <line x1="0" y1="5" x2="20" y2="5" />
+                    <line x1="15" y1="0" x2="20" y2="5" />
+                    <line x1="15" y1="10" x2="20" y2="5" />
+                  </svg>
+                </a>
+              </div>
+              <div class="card-photo">
+                <div id="mask-1" class="mask"></div>
+                <div id="mask-2" class="mask"></div>
+                <a href="#" @click="nextCard">
+                  <p>Next</p>
+                  <svg viewBox="0 0 20 10">
+                    <line x1="0" y1="5" x2="20" y2="5" />
+                    <line x1="15" y1="0" x2="20" y2="5" />
+                    <line x1="15" y1="10" x2="20" y2="5" />
+                  </svg>
+                </a>
+                <img src="images/0.jpg">
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+      <script>
+        const {createApp} = Vue;
+
+createApp({
+	data() {
+		return {
+			cards: [
+				{
+					id: 1,
+					title: "Cincinnati",
+					desc:
+					"Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum error quasi aliquam corporis nulla deserunt esse tempora quia, maiores magni natus modi autem id odit earum alias a odio perspiciatis!",
+					photo:
+					"images/1.jpg",
+				},
+				{
+					id: 2,
+					title: "Cincin",
+					desc:
+					"Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum error quasi aliquam corporis nulla deserunt esse tempora quia, maiores magni natus modi autem id odit earum alias a odio perspiciatis!",
+					photo:
+					"images/3.jpg"
+				},
+				{
+					id: 3,
+					title: "ade",
+					desc:
+					"Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum error quasi aliquam corporis nulla deserunt esse tempora quia, maiores magni natus modi autem id odit earum alias a odio perspiciatis!",
+					photo:
+					"images/5.jpg"
+				},
+				{
+					id: 4,
+					title: "ada",
+					desc:
+					"Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum error quasi aliquam corporis nulla deserunt esse tempora quia, maiores magni natus modi autem id odit earum alias a odio perspiciatis!",
+					photo:
+					"images/0.jpg"
+				}
+			],
+			currentNum: 0
+		}; 
+	},
+	computed: {
+		currentCard() {
+			return this.cards[this.currentNum];
+		}
+	},
+	methods: {
+		playForward() {
+			let tl = gsap.timeline({
+				defaults: {
+					duration: 0.7,
+					ease: "sine.out"
+				},
+				onComplete: () => {
+					this.playReverse();
+					if (this.currentNum >= 3) {
+						this.currentNum = 0;
+					} else {
+						this.currentNum++;
+					}
+				}
+			});
+			tl.to("#mask-1", {
+				yPercent: 100,
+				scaleY: 1.4
+			})
+			.to(
+				"#mask-2",
+				{
+					yPercent: -100,
+					scaleY: 1.4
+				},
+				"<"
+			)
+			.to(
+				"#card-info-title",
+				{
+					clipPath: `polygon(0 0, 100% 0, 100% 0%, 0% 0%)`
+				},
+				"<0.4"
+			)
+			.to(
+				"#card-info-desc",
+				{
+					clipPath: `polygon(0 0, 100% 0, 100% 0%, 0% 0%)`
+				},
+				"<0.3"
+			);
+		},
+		playReverse() {
+			let tl = gsap.timeline({
+				defaults: {
+					duration: 0.7,
+					ease: "sine.in"
+				}
+			});
+			tl.to("#mask-1", {
+				yPercent: -100,
+				scaleY: 1.4
+			})
+			.to(
+				"#mask-2",
+				{
+					yPercent: 100,
+					scaleY: 1.4
+				},
+				"<"
+			)
+			.to(
+				"#card-info-title",
+				{
+					clipPath: `polygon(0 0, 100% 0, 100% 100%, 0% 100%)`
+				},
+				"<0.2"
+			)
+			.to(
+				"#card-info-desc",
+				{
+					clipPath: `polygon(0 0, 100% 0, 100% 100%, 0% 100%)`
+				},
+				"<0.3"
+			);
+		},
+		nextCard() {
+			this.playForward();
+		}
+	}
+}).mount("#app");
+      </script>
+</body>
+</html>
